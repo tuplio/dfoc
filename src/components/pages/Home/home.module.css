@@ -1,0 +1,28 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.greetingContainer {
+    display: flex;
+    background-color: #181818;
+}
+
+.greetingTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+
+    padding: 2rem;
+    color: white;
+}
+
+.backdrop1 {
+    width: 45%;
+    background-image: linear-gradient(to left, rgba(0,0,0,1), transparent);
+    
+    /* aspect-ratio: 1; */
+}

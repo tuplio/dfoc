@@ -9,7 +9,9 @@ const Page = ({ children }: PageProps) => {
     return (
         <div>
             <HeaderShadow />
-            { children }
+            <div style={{ display: 'flex' }}>
+                { children }
+            </div>
         </div>
     );
 }

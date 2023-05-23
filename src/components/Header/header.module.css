@@ -4,7 +4,7 @@
 
 .header {
     position: fixed;
-    background-color: blue;
+    background-color: #7c40ff;
     height: var(--HEADER_HEIGHT);
     top: 0;
     left: 0;
