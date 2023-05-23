@@ -1,5 +1,6 @@
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import backdrop from '../../../assets/home-backdrop-1.jpg';
+import logoWhite from '../../../assets/dfoc-black-on-transparent.png';
 
 import classes from './home.module.css';
 
@@ -21,8 +22,8 @@ const Home = ({ }: HomeProps) => {
                 </div>
                 <img className={classes.backdrop1} src={backdrop}></img>
             </div>
-            <div>
-                
+            <div className={classes.logoContainer}>
+                <img className={classes.logo} src={logoWhite}></img>
             </div>
         </div>
     );

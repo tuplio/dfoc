@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-color: #2b2b30;
 }
 
 .greetingContainer {
@@ -22,7 +24,14 @@
 
 .backdrop1 {
     width: 45%;
-    background-image: linear-gradient(to left, rgba(0,0,0,1), transparent);
-    
-    /* aspect-ratio: 1; */
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.logo {
+    background-image: radial-gradient(circle at center, #6834d7 0, transparent 50%);
+    height: 10rem;
+    width: 10rem;
 }
