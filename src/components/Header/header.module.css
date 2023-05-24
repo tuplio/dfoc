@@ -1,14 +1,21 @@
 :root {
-    --HEADER_HEIGHT: 4rem;
+    --HEADER_HEIGHT: 5rem;
+    --HEADER-LEFT-MARGIN: 0.5rem;
+    --HEADER-RIGHT-MARGIN: 3rem;
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+
     position: fixed;
-    background-color: #311965;
+    width: 100vw;
     height: var(--HEADER_HEIGHT);
     top: 0;
     left: 0;
     right: 0;
+
+    background-color: #6834d7;
 }
 
 .headerShadow {
@@ -16,4 +23,25 @@
     top: 0;
     left: 0;
     right: 0;
+}
+
+.logoContainer {
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: var(--HEADER-LEFT-MARGIN);
+}
+
+.logo {
+    height: 100%;
+    width: 100;
+    background-image: radial-gradient(circle at center, white 0, transparent 51%);
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: var(--HEADER-RIGHT-MARGIN);
 }

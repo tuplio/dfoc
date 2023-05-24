@@ -35,3 +35,32 @@
     height: 10rem;
     width: 10rem;
 }
+
+.dropzone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 2rem;
+    height: 20rem;
+    width: 20rem;
+
+    color: white;
+    border: 2px dashed white;
+    border-radius: 1rem;
+}
+
+.dropzone:hover {
+    border-color: #8f8f8f;
+    color: #8f8f8f;
+}
+
+.dropzone:active {
+    text-decoration:overline;
+}
+
+.validDragOver {
+    border-color: #6834d7;
+    color: #6834d7;
+    text-shadow: 0 0 10px #181818;
+}

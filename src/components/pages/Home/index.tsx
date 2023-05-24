@@ -1,8 +1,10 @@
 import { Typography } from '@mui/material';
-import backdrop from '../../../assets/home-backdrop-1.jpg';
-import logoWhite from '../../../assets/dfoc-black-on-transparent.png';
 
 import classes from './home.module.css';
+import Dropzone from './Dropzone';
+
+import backdrop from '../../../assets/home-backdrop-1.jpg';
+import logoWhite from '../../../assets/dfoc-black-on-transparent.png';
 
 interface HomeProps {
     
@@ -22,6 +24,7 @@ const Home = ({ }: HomeProps) => {
                 </div>
                 <img className={classes.backdrop1} src={backdrop}></img>
             </div>
+            <Dropzone />
             <div className={classes.logoContainer}>
                 <img className={classes.logo} src={logoWhite}></img>
             </div>
