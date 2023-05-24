@@ -1,7 +1,7 @@
 :root {
     --HEADER_HEIGHT: 5rem;
     --HEADER-LEFT-MARGIN: 0.5rem;
-    --HEADER-RIGHT-MARGIN: 3rem;
+    --HEADER-RIGHT-MARGIN: 2rem;
 }
 
 .header {
@@ -16,6 +16,7 @@
     right: 0;
 
     background-color: #6834d7;
+    box-shadow: 0 0 10px black;
 }
 
 .headerShadow {

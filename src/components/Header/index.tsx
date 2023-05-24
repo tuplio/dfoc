@@ -29,12 +29,12 @@ const Header = () => {
     return (
         <div className={classes.header}>
             <div className={classes.logoContainer}>
-                <Button onClick={onLogoClick} color='inherit'>
+                <Button onClick={onLogoClick} color='secondary'>
                     <img className={classes.logo} src={logoWhite}></img>
                 </Button>
             </div>
             <div className={classes.menuContainer}>
-                <Button color='inherit'
+                <Button color='secondary'
                     aria-controls={!!anchorElem ? 'basic-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={!!anchorElem ? 'true' : undefined}
