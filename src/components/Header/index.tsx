@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Button, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import { HOME_PATH } from '../../Router';
+
 import classes from './header.module.css';
 import logoWhite from '../../assets/dfoc-black-on-transparent.png';
 
@@ -16,7 +18,7 @@ const Header = () => {
 
     const navigate = useNavigate();
 
-    const onLogoClick = () => navigate('/');
+    const onLogoClick = () => navigate(HOME_PATH);
 
     const onMenuClick = (e: MouseEvent<HTMLButtonElement>) => {
         setAnchorElem(e.currentTarget);
