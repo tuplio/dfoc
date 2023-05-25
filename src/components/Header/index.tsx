@@ -8,10 +8,6 @@ import { HOME_PATH, SUPPORT_PATH } from '../../Router';
 import classes from './header.module.css';
 import logoWhite from '../../assets/dfoc-black-on-transparent.png';
 
-
-interface HeaderProps {
-    
-}
  
 const Header = () => {
     const [anchorElem, setAnchorElem] = useState<null | HTMLElement>(null);

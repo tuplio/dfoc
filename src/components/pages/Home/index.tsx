@@ -4,7 +4,6 @@ import classes from './home.module.css';
 import Dropzone from './Dropzone';
 
 import backdrop from '../../../assets/home-backdrop-1.jpg';
-import logoWhite from '../../../assets/dfoc-black-on-transparent.png';
 
 interface HomeProps {
     
