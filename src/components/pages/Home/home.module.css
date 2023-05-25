@@ -51,6 +51,16 @@
     border-radius: 1rem;
 }
 
+.dropzone:hover {
+    border-color: #8f8f8f;
+    color: #8f8f8f;
+    cursor: pointer;
+}
+
+.dropzone:active {
+    text-decoration:underline;
+}
+
 .validDragOver {
     border-color: #6834d7;
     color: #6834d7;
@@ -60,4 +70,8 @@
 .invalidDrop {
     border-color: #c9141e;
     color: #c9141e;
+}
+
+.fileInput {
+    flex: 1;
 }

@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState, DragEvent as rDragEvent } from 'react';
+import {
+    useEffect,
+    useState,
+    DragEvent as rDragEvent,
+    ChangeEvent as rChangeEvent,
+    useRef
+} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { UPLOADING_PATH } from '../../../Router';
@@ -10,8 +16,8 @@ interface ValidationT {
     message: string,
 }
 
-const validateFiles = (files: FileList): ValidationT => {
-    if (files.length < 1) {
+const validateFiles = (files: FileList | null): ValidationT => {
+    if (!files || files.length < 1) {
         return {
             valid: false,
             message: 'Please upload a valid file.',
@@ -40,12 +46,12 @@ const validateFiles = (files: FileList): ValidationT => {
 }
 
 const Dropzone = () => {
-    const dropzoneRef = useRef<HTMLDivElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const [dragActive, setDragActive] = useState(false);
+    const [dragActive, setDragActive]               = useState(false);
     const [dropzoneClassName, setDropzoneClassName] = useState(classes.dropzone);
-    const [dropValidation, setDropValidation] = useState<ValidationT | null>(null);
-    const [dropzoneMessage, setDropzoneMessage] = useState<string>('Click Me or drag a file to upload');
+    const [dropValidation, setDropValidation]       = useState<ValidationT | null>(null);
+    const [dropzoneMessage, setDropzoneMessage]     = useState<string>('Click Me or drag a file to upload');
 
     const navigate = useNavigate();
 
@@ -60,8 +66,16 @@ const Dropzone = () => {
         }
 
         setDropValidation(validation);
-
     };
+
+    const onFileUpload = (e: rChangeEvent<HTMLInputElement>) => {
+        const validation = validateFiles(e.target.files);
+        if (validation.valid) {
+            navigate(UPLOADING_PATH);
+        }
+
+        setDropValidation(validation);
+    }
 
     const onDragOver = (e: rDragEvent) => {
         e.stopPropagation();
@@ -69,6 +83,10 @@ const Dropzone = () => {
         setDragActive(true);
     }
     const onDragLeave = () => setDragActive(false);
+
+    const onDropzoneClick = () => {
+        fileInputRef?.current?.click();
+    }
 
     useEffect(() => {
         if (dragActive) {
@@ -93,13 +111,17 @@ const Dropzone = () => {
     }, [classes, dragActive, dropValidation]);
 
     return (
-        <div ref={ dropzoneRef } className={ dropzoneClassName }
+        <form>
+        <div className={ dropzoneClassName }
             onDrop          ={ onDrop }
             onDragOver      ={ onDragOver }
             onDragLeave     ={ onDragLeave }
+            onClick         ={ onDropzoneClick }
         >
+            <input ref={fileInputRef} className={classes.fileInput} hidden type='file' onChange={ onFileUpload }/>
             { dropzoneMessage }
         </div>
+        </form>
     );
 };
 
