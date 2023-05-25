@@ -22,12 +22,12 @@ const Home = ({ }: HomeProps) => {
                         Powered by the open-source Deepnude algorithm, this is your one stop shop for making your own deepnudes!
                     </Typography>
                 </div>
-                <img className={classes.backdrop1} src={backdrop}></img>
+                <img className={classes.backdrop1} src={backdrop} />
             </div>
             <Dropzone />
-            <div className={classes.logoContainer}>
-                <img className={classes.logo} src={logoWhite}></img>
-            </div>
+            {/* <div className={classes.logoContainer}>
+                <img className={classes.logo} src={logoWhite} />
+            </div> */}
         </div>
     );
 }

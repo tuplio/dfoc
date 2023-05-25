@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { HOME_PATH } from '../../Router';
+import { HOME_PATH, SUPPORT_PATH } from '../../Router';
 
 import classes from './header.module.css';
 import logoWhite from '../../assets/dfoc-black-on-transparent.png';
@@ -24,8 +24,11 @@ const Header = () => {
         setAnchorElem(e.currentTarget);
     };
 
-    const handleClose = () => {
-        setAnchorElem(null);
+    const handleClose = () => setAnchorElem(null);
+
+    const onMenuItemClick = (page: string) => {
+        handleClose();
+        navigate(page);
     };
 
     return (
@@ -50,11 +53,9 @@ const Header = () => {
                     onClose={handleClose}
                     MenuListProps={{
                     'aria-labelledby': 'basic-button',
-                    }}
+                }}
                 >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={ () => onMenuItemClick(SUPPORT_PATH) }>Support</MenuItem>
                 </Menu>
             </div>
         </div>

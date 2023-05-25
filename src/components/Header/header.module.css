@@ -15,7 +15,9 @@
     left: 0;
     right: 0;
 
-    background-color: #6834d7;
+    background:
+        linear-gradient(to bottom,rgb(88, 59, 191, 0.9), rgb(88, 59, 191, 0.7) 100%),
+        linear-gradient(to right, rgba(0,0,0, 0.9), rgba(0,0,0,0.2) 100%);
     box-shadow: 0 0 10px black;
 }
 

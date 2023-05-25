@@ -19,8 +19,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 
 .progressIndicator {
+    flex: 20;
+}
+
+.progressLabel {
     flex: 1;
+    text-align: center;
 }
