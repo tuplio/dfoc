@@ -1,14 +1,18 @@
 .root {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    /* background-color: #2b2b30; */
+    background-color: #2b2b30;
 }
 
 .greetingContainer {
+    flex: 1;
     display: flex;
+
+    top: 0;
     background-color: #181818;
 }
 
@@ -37,13 +41,13 @@
 }
 
 .dropzone {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 
     margin: 2rem;
-    height: 21rem;
     width: 21rem;
 
     color: white;

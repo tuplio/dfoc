@@ -111,7 +111,7 @@ const Dropzone = () => {
     }, [classes, dragActive, dropValidation]);
 
     return (
-        <form>
+        // <form>
         <div className={ dropzoneClassName }
             onDrop          ={ onDrop }
             onDragOver      ={ onDragOver }
@@ -121,7 +121,7 @@ const Dropzone = () => {
             <input ref={fileInputRef} className={classes.fileInput} hidden type='file' onChange={ onFileUpload }/>
             { dropzoneMessage }
         </div>
-        </form>
+        // </form>
     );
 };
 
