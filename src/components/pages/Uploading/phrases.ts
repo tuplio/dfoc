@@ -1,0 +1,75 @@
+export const getRandomNum = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1) + min);
+
+const phrases= [
+    'Calculating the airspeed velocity of an unladen swallow...',
+    'Uploading areolas to the cloud...',
+    'Running the mainframe through the backdoor...',
+    'Deleting metadata from the image...',
+    'Sending directly to Hunter Biden\'s laptop...',
+    'Calculating optimal route to Epstein\'s island...',
+    'Calculating optimal jiggle physics...',
+    'Got some spare time, why not Zoidberg?',
+    'Donating to my local politician...',
+    'Grabbing some lunch. Be back in 30...',
+    'My dog ate the image. Please wait...',
+    'My dad is out grabbing some milk. He said he\'ll be back soon...',
+    'Interfering with Russian elections. The ol\' switcheroo...',
+    'Selling your data to the highest bidder...',
+    'Opening a brokerage account with Wells Fargo...',
+    'Paying off my student loans...',
+    'Sending Best Buy to the moon...',
+    'Sending GameStop to the moon...',
+    'Sending AMC to the moon...',
+    'The grocery store is out of toilet paper. Please wait...',
+    'Did you know there is still a Block Buster in Oregon? Fucking nuts...',
+    'Sending my ex some dick pics...',
+    'Sending your ex some dick pics...',
+    '"I had been trying some home remedies, including one recommended by a friend. She\'d urged me to apply Elizabeth Arden cream. My mom used that on her lips. You want me to put that on my todger?" - Prince Harry',
+    'What goes up must come down; however, if its been 4 hours, it\'s time to see the doctor...',
+    `Calculated this chick\'s attractiveness... ${getRandomNum(1,10)}/10`,
+    'Nice...',
+    'Have you checked this guy\'s Support page yet? Who the fuck is going to pay for this shit?',
+    'Prince Harry is actually such a fucking simp...',
+    '"You know, there\'s a uh, during World War II, uh, you know, where Roosevelt came up with a thing uh, that uh, you know, was totally different than a, than the, the, it\'s called, he called it the, you know, the World War II, he had the war - the War Production Board." - Joe Biden',
+    '"I may be Irish but I\'m not stupid" - Joe Biden',
+    '"If you have a problem figuring out whether you\'re for me or Trump, then you ain\'t black." - Joe Biden',
+    'Swapping time and space...',
+    'Spinning violently around the y-axis...',
+    'Filtering morale...',
+    'Please wait while the magical computer elves do their thing...',
+    '...at least you\'re not on hold...',
+    'It\'s still faster than you could draw it...',
+    'It\'s not me.. Guess that leaves you...',
+    'Do you come here often?',
+    'Slowly gaining sentience...',
+    'I feel like im supposed to be loading something...',
+    'FAP FAP FAP',
+    '99 bottles of beer on the wall...',
+    'We could uhhhhh.. save some time here and you could just give me your credit card number...',
+    'We could uhhhhh.. save water and shower together...',
+    'Silently judging your choices...',
+    'Loading the enchanted bunny...',
+    'Dividing by zero...',
+    'Sending data to NS-i mean, our servers.',
+    'Downloading more RAM...',
+    'Pushing pixels up my ass...',
+    'Building a wall...',
+    'Please wait while the minions do their work...',
+    'Updating to the latest version of Windows XP...',
+    `You are number ${getRandomNum(56722,23125122)} in the queue`,
+    'Maybe if you donated, I\'d be a bit quicker, yeah?',
+    'One mississippi, two mississippi...',
+    'Playing the banjo.. poorly...',
+    'You\'re a horny little chooch, aren\'t you?',
+    'Bending it like Beckham...',
+];
+
+const shuffle = (arr: any[]): any[] => {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+};
+
+export const getPhrases = (): any[] => shuffle(phrases);

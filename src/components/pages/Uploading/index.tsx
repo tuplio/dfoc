@@ -4,12 +4,17 @@ import classes from './uploading.module.css';
 import { Box, LinearProgress, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { getPhrases, getRandomNum } from './phrases';
 
 
 const STARTING_PROGRESS_MULTIPLIER = 5;
 
 
+const phrases = getPhrases();
+
+
 const Uploading = () => {
+    const [phraseIndex, setPhraseIndex] = useState(0);
     const [progress, setProgress] = useState(0);
     const [buffer, setBuffer] = useState(10);
     const [progressMultiplier, setProgressMultiplier] = useState(STARTING_PROGRESS_MULTIPLIER);
@@ -20,7 +25,15 @@ const Uploading = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        console.log(progress);
+        const interval = setInterval(
+            () => setPhraseIndex(prev => ++prev % phrases.length),
+            getRandomNum(3000, 8000)
+        );
+
+        return () => clearInterval(interval);
+    }, [setPhraseIndex, getRandomNum, phrases.length]);
+
+    useEffect(() => {
         progressRef.current = () => {
             if (progress > 100) {
                 navigate('/');
@@ -80,6 +93,7 @@ const Uploading = () => {
                     {`${progress.toFixed(2)}%`}
                 </Typography>
             </Box>
+            <Typography variant="h5" color="text.secondary">{ phrases[phraseIndex] }</Typography>
         </div>
     );
 };
