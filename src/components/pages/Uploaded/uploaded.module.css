@@ -9,12 +9,25 @@
 }
 
 .image {
-    height: 70%;
+    width: 40%;
     border-radius: 15px;
     border: 2px solid #6834d7;
     box-shadow: 0 0 10px #181818;
 }
 
+@media screen and (max-width: 600px) {
+    .image {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .image {
+        width: 60%;
+    }
+}
+
 .text {
     color: white;
+    text-align: center;
 }
