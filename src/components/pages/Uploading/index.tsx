@@ -27,7 +27,7 @@ const Uploading = () => {
     useEffect(() => {
         const interval = setInterval(
             () => setPhraseIndex(prev => ++prev % phrases.length),
-            getRandomNum(3000, 8000)
+            getRandomNum(6000, 9000)
         );
 
         return () => clearInterval(interval);
@@ -69,9 +69,7 @@ const Uploading = () => {
             progressRef.current();
         }, 500);
     
-        return () => {
-            clearInterval(timer);
-        };
+        return () => clearInterval(timer);
     }, []);
 
     return (
@@ -87,7 +85,7 @@ const Uploading = () => {
                     valueBuffer={buffer}
                 />
                 <Typography className={classes.progressLabel} variant="body2" color="text.secondary">
-                    {`${progress.toFixed(2)}%`}
+                    {`${ progress.toFixed(2) }%`}
                 </Typography>
             </Box>
             <Typography variant="h5" color="text.secondary">{ phrases[phraseIndex] }</Typography>
