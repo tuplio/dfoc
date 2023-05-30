@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router';
 import { getPhrases, getRandomNum } from './phrases';
 
 
-const STARTING_PROGRESS_MULTIPLIER = 5;
+const STARTING_PROGRESS_MULTIPLIER = 10;
 
 
 const phrases = getPhrases();
@@ -35,26 +35,24 @@ const Uploading = () => {
 
     useEffect(() => {
         progressRef.current = () => {
-            if (progress > 100) {
-                navigate('/');
+            if (progress >= 100) {
+                navigate('/uploaded');
             }
             
-            if (progress > 99.9) {
-                setProgressMultiplier(0.0001);
-            } else if (progress > 99.5) {
-                setProgressMultiplier(0.001);
-            } else if (progress > 99) {
+            if (progress > 99.5) {
                 setProgressMultiplier(0.01);
-            } else if (progress > 95) {
+            } else if (progress > 97) {
                 setProgressMultiplier(0.1);
-            } else if (progress > 90) {
+            } else if (progress > 80) {
                 setProgressMultiplier(1);
-            } else if (progress > 75) {
+            } else if (progress > 70) {
                 setProgressMultiplier(2);
-            } else if (progress > 50) {
+            } else if (progress > 60) {
                 setProgressMultiplier(3);
-            } else if (progress > 25) {
+            } else if (progress > 50) {
                 setProgressMultiplier(4);
+            } else if (progress > 35) {
+                setProgressMultiplier(5);
             }
 
             const progressDelta = Math.random() * progressMultiplier;
@@ -85,7 +83,7 @@ const Uploading = () => {
                     valueBuffer={buffer}
                 />
                 <Typography className={classes.progressLabel} variant="body2" color="text.secondary">
-                    {`${ progress.toFixed(2) }%`}
+                    {`${ Math.min(progress, 100.00).toFixed(2) }%`}
                 </Typography>
             </Box>
             <Typography variant="h5" color="text.secondary">{ phrases[phraseIndex] }</Typography>
