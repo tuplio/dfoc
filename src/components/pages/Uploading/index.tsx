@@ -73,7 +73,7 @@ const Uploading = () => {
     return (
         <div className={classes.root} style={{ backgroundColor: theme.palette.secondary.main }}>
             <div className={classes.adContainer}>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9262369645660806" crossOrigin="anonymous" />
+            <meta name="monetag" content="8b867ef8f69f741959e2e54b978491c3"></meta>
             </div>
             <Box className={classes.progressContainer} sx={{ height: '2rem', width: '90%' }}>
                 <LinearProgress className={classes.progressIndicator}

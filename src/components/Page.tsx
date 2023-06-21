@@ -8,7 +8,6 @@ interface PageProps {
 
 const Page = ({ children }: PageProps) => {
     const theme = useTheme();
-    console.log(theme)
     return (
         <div>
             <HeaderShadow />
